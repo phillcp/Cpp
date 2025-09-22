@@ -1,0 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/18 17:02:40 by fheaton-          #+#    #+#             */
+/*   Updated: 2023/01/18 17:34:26 by fheaton-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "HumanA.hpp"
+#include <iostream>
+
+HumanA::HumanA(std::string name, Weapon& weapon)
+	: _name(name), _weapon(weapon){}
+
+HumanA::~HumanA(){}
+
+void HumanA::attack() const{
+	std::cout << this->_name << " attacks with their " << _weapon.getType() << std::endl;
+}
