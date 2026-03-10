@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 17:07:01 by fheaton-          #+#    #+#             */
-/*   Updated: 2023/01/13 02:18:47 by fheaton-         ###   ########.fr       */
+/*   Updated: 2026/03/10 15:50:51 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ int	main(int argc, char const *argv[])
 	(void) argv;
 	PhoneBook book;
 	string in;
-	while (1)
+	while (std::cin)
 	{
-		std::cout << "WackyPhoneBook: ";
+		std::cout << "ThePhoneBook: ";
 		getline(std::cin, in);
 		if (!in.compare("EXIT"))
 			break;
@@ -87,8 +87,8 @@ int	main(int argc, char const *argv[])
 				std::cout << "Couldn't convert index to a number.\n";
 			}
 		}
-		else
-			std::cout << "Command input unrecognized, try again with these available commands:\n\tADD\n\tSEARCH\n\tEXIT\n";
+		else if (std::cin)
+			std::cout << "Wrong input, maybe chose one of these:\n\tADD\n\tSEARCH\n\tEXIT\n";
 	}
 	return (1);
 }

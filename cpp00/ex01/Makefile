@@ -1,4 +1,4 @@
-NAME	=	PhoneBook
+NAME	=	ThePhoneBook
 CC		=	@c++
 AR		=	@ar rcs
 CFLAGS	=	-Werror -Wextra -Wall -std=c++98 -MMD -MP -g
