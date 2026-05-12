@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 00:08:59 by fheaton-          #+#    #+#             */
-/*   Updated: 2023/01/13 00:58:47 by fheaton-         ###   ########.fr       */
+/*   Updated: 2026/05/11 21:59:16 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ void printrow(string s1, string s2, string s3, string s4){
 	std::cout << "|" << std::endl;
 }
 
-int to_int(const char *s)
+int stoi(const char *s)
 {
 	if (s == NULL || *s == '\0')
 		throw std::invalid_argument("null or empty string argument");
-	bool negate = (s[0] == '-');
+	bool negative = (s[0] == '-');
 	if (*s == '+' || *s == '-')
 		++s;
 	if (*s == '\0')
@@ -47,5 +47,5 @@ int to_int(const char *s)
 		result = result * 10 - (*s - '0');
 		++s; 
 	}
-	return (negate ? result : -result);
+	return (negative ? result : -result);
 }

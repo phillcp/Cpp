@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 17:20:14 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/09/22 10:54:28 by fheaton-         ###   ########.fr       */
+/*   Updated: 2026/05/11 21:55:53 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <string>
 #include <Contact.hpp>
 #include <utils.hpp>
+#include <sstream>
 
 Contact::Contact(string f_name, string l_name, string n_name, string c_num, string d_secret)
 {
@@ -81,7 +82,9 @@ void Contact::setd_secret(string d_secret){
 }
 
 void Contact::printinfo(int index){
-	printrow(ITOS(index), this->first_name, this->last_name, this->nickname);
+	std::stringstream ss;
+	ss << index;
+	printrow(ss.str(), this->first_name, this->last_name, this->nickname);
 }
 
 void Contact::printcontact(){

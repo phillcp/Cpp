@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 17:07:01 by fheaton-          #+#    #+#             */
-/*   Updated: 2026/03/10 15:50:51 by fiheaton         ###   ########.fr       */
+/*   Updated: 2026/05/11 22:11:38 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,19 @@ static void	add(PhoneBook *book)
 
 	f_name = ft_getline("Input contact's first name: ");
 	if (!f_name.compare(""))
-		return ;
+		throw std::invalid_argument("first name");
 	l_name = ft_getline("Input contact's last Name: ");
 	if (!l_name.compare(""))
-		return ;
+		throw std::invalid_argument("last name");
 	n_name = ft_getline("Input contact's nickname: ");
 	if (!n_name.compare(""))
-		return ;
+		throw std::invalid_argument("nickname");
 	c_num = ft_getline("Input contact's number: ");
 	if (!c_num.compare(""))
-		return ;
+		throw std::invalid_argument("number");
 	d_secret = ft_getline("Input contact's darkest secret: ");
 	if (!d_secret.compare(""))
-		return ;
+		throw std::invalid_argument("secret");
 	(*book).add(f_name, l_name, n_name, c_num, d_secret);
 }
 
@@ -55,29 +55,41 @@ int	main(int argc, char const *argv[])
 	string in;
 	while (std::cin)
 	{
-		std::cout << "ThePhoneBook: ";
+		std::cout << "PhoneBook: ";
 		getline(std::cin, in);
 		if (!in.compare("EXIT"))
 			break;
 		if (!in.compare("ADD"))
-			add(&book);
+		{
+			try
+			{
+				add(&book);
+			}
+			catch(const std::exception& e)
+			{
+				std::cout << e.what() << "Field cannot be empty." << std::endl;
+			}
+		}
 		else if (!in.compare("SEARCH"))
 		{
 			if (book.getsize() == 0)
 			{
-				std::cout << "PhoneBook empty.\n";
+				std::cout << "PhoneBook is empty.\n";
 				continue;
 			}
 			book.printbook();
-			in = ft_getline("Input desired contact index: ");
+			in = ft_getline("Input contact index: ");
 			if (!in.compare(""))
+			{
+				std::cout << "Input cannot be empty." << std::endl;
 				continue;
+			}
 			try
 			{
-				int index = to_int(static_cast<const char *>(in.c_str()));
+				int index = stoi((in.c_str()));
 				if (!book.checkindex(index - 1))
 				{
-					std::cout << "Not a valid index.\n";
+					std::cout << "Not a valid index." << std::endl;
 					continue;
 				}
 				book.printcontact(index - 1);
@@ -88,7 +100,7 @@ int	main(int argc, char const *argv[])
 			}
 		}
 		else if (std::cin)
-			std::cout << "Wrong input, maybe chose one of these:\n\tADD\n\tSEARCH\n\tEXIT\n";
+			std::cout << "Wrong input, maybe chose one of these:\n\tADD\n\tSEARCH\n\tEXIT" << std::endl;
 	}
 	return (1);
 }

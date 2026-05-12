@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 00:28:50 by fheaton-          #+#    #+#             */
-/*   Updated: 2023/01/13 02:09:55 by fheaton-         ###   ########.fr       */
+/*   Updated: 2026/05/11 21:59:23 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,7 @@
 
 #include <string>
 
-#include <sstream>
-
-#define ITOS(x) static_cast< std::ostringstream & >( \
-	( std::ostringstream() << std::dec << x ) ).str()
-
 void printrow(std::string s1, std::string s2, std::string s3, std::string s4);
-int to_int(const char *s);
+int stoi(const char *s);
 
 #endif

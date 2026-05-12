@@ -32,22 +32,22 @@ $(OBJ_DIR) $(DEP_DIR):
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
 	@mkdir -p $(dir $@) $(dir $(DEP_DIR)$*.d)
-	$(CC) $(CFLAGS) ${INCS} -c $< -o $@ -MF $(DEP_DIR)$*.d || { echo "$(RED)Failed to create obj/dep$(RESET)"; exit 1;}
-	@echo "$(BOLD)$(YELLOW)File $< compiled$(RESET)"
+	$(CC) $(CFLAGS) ${INCS} -c $< -o $@ -MF $(DEP_DIR)$*.d || { echo "Failed to create obj/dep"; exit 1;}
+	@echo "File $< compiled"
 
 $(BIN_DIR)$(NAME): $(OBJS)
-	@echo "$(BOLD)$(YELLOW)Creating program$(RESET)"
+	@echo "Creating program"
 	@mkdir -p $(BIN_DIR)
-	$(CC) $(CFLAGS) ${INCS} $(OBJS) -o $@ || { echo "$(RED)Failed to create program$(RESET)"; exit 1; }
-	@echo "$(BOLD)$(GREEN)Program compiled succesfully$(RESET)"
+	$(CC) $(CFLAGS) ${INCS} $(OBJS) -o $@ || { echo "Failed to create program"; exit 1; }
+	@echo "Program compiled succesfully"
 
 clean:
 	@if [ -d $(OBJ_DIR) ] || [ -d $(DEP_DIR) ]; then \
-		echo "$(BOLD)$(YELLOW)Cleaning$(RESET)"; \
+		echo "Cleaning"; \
 		rm -rf $(OBJ_DIR) $(DEP_DIR); \
-		echo "$(BOLD)$(GREEN)Clean$(RESET)"; \
+		echo "Clean"; \
 	else \
-		echo "$(BOLD)$(BLUE)No objs or deps to clean$(RESET)"; \
+		echo "No objs or deps to clean"; \
 	fi
 
 fclean: clean
