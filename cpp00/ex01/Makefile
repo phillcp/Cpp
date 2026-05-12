@@ -36,10 +36,10 @@ $(OBJ_DIR) $(DEP_DIR):
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
 	@mkdir -p $(dir $@) $(dir $(DEP_DIR)$*.d)
 	$(CC) $(CFLAGS) ${INCS} -c $< -o $@ -MF $(DEP_DIR)$*.d || { echo "$(RED)Failed to create obj/dep$(RESET)"; exit 1;}
-	@echo "$(BOLD)$(YELLOW)File $< compiled$(RESET)"
+	@echo "File $< compiled"
 
 $(BIN_DIR)$(NAME): $(OBJS)
-	@echo "$(BOLD)$(YELLOW)Creating program$(RESET)"
+	@echo "Creating program"
 	@mkdir -p $(BIN_DIR)
 	$(CC) $(CFLAGS) ${INCS} $(OBJS) -o $@ || { echo "$(RED)Failed to create program$(RESET)"; exit 1; }
 	@echo "$(BOLD)$(GREEN)Program compiled succesfully$(RESET)"

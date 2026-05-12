@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 17:20:49 by fheaton-          #+#    #+#             */
-/*   Updated: 2023/01/13 02:18:32 by fheaton-         ###   ########.fr       */
+/*   Updated: 2026/05/12 15:09:50 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ void PhoneBook::printcontact(int i){
 }
 
 bool PhoneBook::checkindex(int i){
-	return i >= 0 && i < MAX_BOOK_SIZE && !this->list[i].isempty();
+	return (i >= 0 && i < MAX_BOOK_SIZE && !this->list[i].isempty());
 }
 
 int PhoneBook::getsize() {
 	if (this->list[this->next].isempty())
-		return this->next;
+		return (this->next);
 	else
-		return MAX_BOOK_SIZE;
+		return (MAX_BOOK_SIZE);
 }
