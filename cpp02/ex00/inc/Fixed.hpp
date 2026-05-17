@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:45:41 by fheaton-          #+#    #+#             */
-/*   Updated: 2023/01/19 18:10:10 by fheaton-         ###   ########.fr       */
+/*   Updated: 2026/05/17 22:13:49 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,16 @@
 
 class Fixed{
 	private:
-		int _fPoint;
-		static int const _fBits;
+		int _val;
+		static const int _fract = 8;
 	public:
 		Fixed();
-		Fixed(Fixed const &copy);
+		Fixed(const Fixed& original);
 		~Fixed();
-		Fixed& operator=(Fixed const &copy);
+
+		Fixed &operator=(const Fixed& original);
 		int getRawBits( void ) const;
-		void setRawBits( int const raw );
+		void setRawBits(int const rawBits );
 };
 
 #endif

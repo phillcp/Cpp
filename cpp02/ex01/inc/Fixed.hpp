@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:45:53 by fheaton-          #+#    #+#             */
-/*   Updated: 2023/01/19 18:15:51 by fheaton-         ###   ########.fr       */
+/*   Updated: 2026/05/17 22:51:36 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,23 @@
 
 class Fixed{
 	private:
-		int _fPoint;
-		static int const _fBits = 8;
+		int _val;
+		static const int _fract = 8;
 	public:
 		Fixed();
-		Fixed(Fixed const &copy);
-		Fixed(int const fPoint);
-		Fixed(float const fPoint);
+		Fixed(const Fixed& original);
+		Fixed(const int val);
+		Fixed(const float val);
 		~Fixed();
 		
-		Fixed& operator=(Fixed const &copy);
+		Fixed &operator=(const Fixed &original);
+
 		int getRawBits( void ) const;
-		void setRawBits( int const raw );
-		int toInt() const;
+		void setRawBits(int const raw);
 		float toFloat() const;
+		int toInt() const;
 };
 
-std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
+std::ostream& operator<<(std::ostream &outstr, const Fixed &fixed_nbr);
 
 #endif
