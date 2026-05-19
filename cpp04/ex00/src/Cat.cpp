@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:28:20 by fheaton-          #+#    #+#             */
-/*   Updated: 2023/02/10 14:26:33 by fheaton-         ###   ########.fr       */
+/*   Updated: 2026/05/19 15:01:13 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Cat.hpp>
 
 Cat::Cat(){
-	this->type = "Cat";
+	this->_type = "Cat";
 	std::cout << "Cat constructor called" << std::endl;
 }
 

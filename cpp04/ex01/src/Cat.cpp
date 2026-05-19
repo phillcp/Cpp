@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:28:20 by fheaton-          #+#    #+#             */
-/*   Updated: 2023/04/20 17:11:54 by fheaton-         ###   ########.fr       */
+/*   Updated: 2026/05/19 15:02:56 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 Cat::Cat(){
 	this->_brain = new Brain;
-	this->type = "Cat";
+	this->_type = "Cat";
 	std::cout << "Cat constructor called" << std::endl;
 }
 
 Cat::Cat(const Cat& other) : Animal(other){
-	this->type = other.type;
+	this->_type = other._type;
 	this->_brain = new Brain(*other._brain);
 	std::cout << "Cat copy constructor called." << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& other){
-	this->type = other.type;
+	this->_type = other._type;
 	delete this->_brain;
 	this->_brain = new Brain(*other._brain);
-	return *this;
+	return (*this) ;
 }
 
 Cat::~Cat(){
-	delete _brain;
+	delete this->_brain;
 	std::cout << "Cat destructor called" << std::endl;
 }
 
@@ -46,7 +46,7 @@ void Cat::newIdea(const std::string& idea){
 
 void Cat::printIdeas() const{
 	std::cout << std::endl;
-	std::cout << this->type << ":\n";
+	std::cout << this->_type << ":" << std::endl;
 	this->_brain->printIdeas();
 	std::cout << std::endl;
 }

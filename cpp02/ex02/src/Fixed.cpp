@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:45:55 by fheaton-          #+#    #+#             */
-/*   Updated: 2026/05/17 23:15:09 by fiheaton         ###   ########.fr       */
+/*   Updated: 2026/05/18 22:21:00 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ Fixed Fixed::operator++(void){
 	this->_val++;
 	return(*this);
 }
+
 Fixed Fixed::operator++(int){
 	const Fixed oldval (*this);
 	this->_val++;

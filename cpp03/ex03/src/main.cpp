@@ -3,45 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:53:26 by fheaton-          #+#    #+#             */
-/*   Updated: 2023/02/04 16:25:47 by fheaton-         ###   ########.fr       */
+/*   Updated: 2026/05/18 20:46:10 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Claptrap.hpp"
-#include "Scavtrap.hpp"
-#include "Fragtrap.hpp"
-#include "Diamondtrap.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
-	Claptrap a ("Clap1");
-	a.attack("Clap2");
+	ClapTrap a ("TheClap");
+	a.attack("Tony");
 	a.takeDamage(5);
 	a.beRepaired(5);
 
 	std::cout << std::endl;
 
-	Scavtrap b ("Scav1");
-	b.attack("Scav2");
+	ScavTrap b ("TheScav");
+	b.attack("Kony");
 	b.takeDamage(20);
 	b.beRepaired(20);
 	b.guardGate();
 
 	std::cout << std::endl;
 
-	Fragtrap c ("Frag1");
-	c.attack("Frag2");
+	FragTrap c ("TheFrag");
+	c.attack("Lony");
 	c.takeDamage(30);
 	c.beRepaired(30);
 	c.highFivesGuys();
 
 	std::cout << std::endl;
 
-	Diamondtrap d("Diamond1");
-	d.attack("Diamond2");
+	DiamondTrap d("TheDiamond");
+	d.attack("Rony");
 	d.takeDamage(50);
 	d.beRepaired(50);
 	d.guardGate();

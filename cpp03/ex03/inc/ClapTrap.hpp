@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fragtrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 13:31:03 by fheaton-          #+#    #+#             */
-/*   Updated: 2023/01/26 14:13:55 by fheaton-         ###   ########.fr       */
+/*   Created: 2023/01/23 14:40:31 by fheaton-          #+#    #+#             */
+/*   Updated: 2026/05/18 19:25:21 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 #include <string>
 #include <iostream>
-#include <Claptrap.hpp>
 
-class Fragtrap: public Claptrap{
-	private:
-		Fragtrap();
+class ClapTrap{
+	protected:
+		std::string _name;
+		unsigned int _hp;
+		unsigned int _ep;
+		unsigned int _dmg;
 	public:
-		Fragtrap(std::string name);
-		~Fragtrap();
-		void highFivesGuys();
+		ClapTrap();
+		ClapTrap(std::string name);
+		~ClapTrap();
 		void attack(const std::string& target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
 };
 
 #endif

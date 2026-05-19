@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:53:26 by fheaton-          #+#    #+#             */
-/*   Updated: 2023/01/26 14:14:33 by fheaton-         ###   ########.fr       */
+/*   Updated: 2026/05/18 19:16:33 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Claptrap.hpp"
-#include "Scavtrap.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-	Claptrap a ("Clap1");
-	a.attack("Clap2");
+	ClapTrap a ("TheClap");
+	a.attack("Tony");
 	a.takeDamage(5);
 	a.beRepaired(5);
 
 	std::cout << std::endl;
 
-	Scavtrap b ("Scav1");
-	b.attack("Scav2");
+	ScavTrap b ("TheScav");
+	b.attack("Kony");
 	b.takeDamage(20);
 	b.beRepaired(20);
 	b.guardGate();

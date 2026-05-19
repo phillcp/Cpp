@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:53:26 by fheaton-          #+#    #+#             */
-/*   Updated: 2023/01/23 16:04:28 by fheaton-         ###   ########.fr       */
+/*   Updated: 2026/05/18 19:38:47 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int main()
 {
-	Claptrap a ("Clap1");
-	Claptrap b ("Clap2");
+	ClapTrap a ("TheClap");
+	ClapTrap b ("TheTrap");
 
-	a.attack("Clap2");
-	b.takeDamage(0);
-	a.beRepaired(5);
+	a.attack("Tony");
+	b.takeDamage(5);
+	b.beRepaired(5);
 
 	std::cout << std::endl;
 

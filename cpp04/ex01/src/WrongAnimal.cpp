@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:04:34 by fheaton-          #+#    #+#             */
-/*   Updated: 2023/02/08 17:13:27 by fheaton-         ###   ########.fr       */
+/*   Updated: 2026/05/19 15:03:44 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void WrongAnimal::makeSound() const{
 }
 
 std::string WrongAnimal::getType() const{
-	return (this->type);
+	return (this->_type);
 }
