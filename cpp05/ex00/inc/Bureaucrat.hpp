@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/18 19:04:28 by fheaton-          #+#    #+#             */
-/*   Updated: 2026/06/08 16:02:32 by fiheaton         ###   ########.fr       */
+/*   Created: 2026/05/19 16:41:46 by fiheaton          #+#    #+#             */
+/*   Updated: 2026/05/19 16:58:01 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-#define HARL_HPP
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 
 #include <string>
 #include <iostream>
 
-class Harl{
+class Bureaucrat{
 	private:
-		void (Harl::*comp[4])();
-		void debug( void );
-		void info( void );
-		void warning( void );
-		void error( void );
+		const std::string _name;
+		int	_grade;
 	public:
-		Harl();
-		~Harl();
-		void complain( std::string level );
+		Bureaucrat();
+		Bureaucrat(std::string name, int grade);
+		~Bureaucrat();
+		
+		int Bureaucrat::getGrade();
+		const std::string getName();
 };
 
 #endif

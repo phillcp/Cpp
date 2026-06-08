@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 18:22:22 by fheaton-          #+#    #+#             */
-/*   Updated: 2025/09/16 15:09:50 by fheaton-         ###   ########.fr       */
+/*   Updated: 2026/06/08 16:06:30 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,21 @@ int main(int argc, char **argv){
 		std::cout << "Wrong number of args" << std::endl;
 		return (-1);
 	}
-	std::ifstream ifs;
-	std::ofstream ofs;
-	ifs.open(argv[1], std::ifstream::in);
-	ofs.open(static_cast<std::string>(argv[1]).append(".replace").c_str(), std::ifstream::out);
-	if (ifs.is_open() && ofs.is_open())
+	std::ifstream in;
+	std::ofstream out;
+	in.open(argv[1], std::ifstream::in);
+	out.open(static_cast<std::string>(argv[1]).append(".replace").c_str(), std::ifstream::out);
+	if (in.is_open() && out.is_open())
 	{
 		std::string content = std::string(std::istreambuf_iterator<char>(ifs), std::istreambuf_iterator<char>());
 		ofs << replace_s1(content, static_cast<std::string>(argv[2]), static_cast<std::string>(argv[3]));
 	}
+	else if (in.is_open())
+		std::cout << "Failed to open input file" << std::endl;
+	else if (out.is_open())
+		std::cout << "Failed to open output file" << std::endl;
 	else
-		std::cout << "Failed to open one or both of the files" << std::endl;
-	ofs.close();
-	ifs.close();
+		std::cout << "Failed to open both files" << std::endl;
+	out.close();
+	in.close();
 }
