@@ -6,7 +6,7 @@
 /*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 18:22:22 by fheaton-          #+#    #+#             */
-/*   Updated: 2026/06/23 09:38:26 by fiheaton         ###   ########.fr       */
+/*   Updated: 2026/06/23 11:27:54 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,9 @@ std::string replace_string(std::string buff, std::string old_s, std::string new_
 		return (buff);
 	while ((i = buff.find(old_s, pos)) != std::string::npos)
 	{
-		std::string tmp = buff.substr(0, i);
-		tmp.append(new_s);
-		pos = tmp.length();
-		tmp.append(buff.substr(i + old_s.length()));
-		buff = tmp;
+		buff.erase(i, old_s.length());
+		buff.insert(i, new_s);
+		pos = i + new_s.length();
 	}
 	return (buff);
 }
