@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 19:04:28 by fheaton-          #+#    #+#             */
-/*   Updated: 2023/01/18 22:42:59 by fheaton-         ###   ########.fr       */
+/*   Updated: 2026/06/23 11:12:47 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,16 @@
 
 #include <string>
 #include <iostream>
-#include <algorithm>
 
 class Harl{
 	private:
-		int lvl;
-		std::string lvls[4];
-		void (Harl::*comp[4])() const;
-		void debug( void ) const;
-		void info( void ) const;
-		void warning( void ) const;
-		void error( void ) const;
+		void (Harl::*comp[4])();
+		void debug( void );
+		void info( void );
+		void warning( void );
+		void error( void );
 	public:
-		Harl(std::string level);
+		Harl();
 		~Harl();
 		void complain( std::string level );
 };

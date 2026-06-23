@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 18:22:22 by fheaton-          #+#    #+#             */
-/*   Updated: 2026/06/08 16:06:30 by fiheaton         ###   ########.fr       */
+/*   Updated: 2026/06/23 09:38:26 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,44 +14,57 @@
 #include <iostream>
 #include <fstream>
 
-std::string replace_s1(std::string s, std::string s1, std::string s2)
+std::string replace_string(std::string buff, std::string old_s, std::string new_s)
 {
-	std::string ret = s;
 	size_t pos = 0;
+	size_t i;
 
-	long i;
-	while((i = ret.find(s1, pos)) >= 0)
+	if (old_s.empty())
+		return (buff);
+	while ((i = buff.find(old_s, pos)) != std::string::npos)
 	{
-		std::string tmp = ret.substr(0, i);
-		tmp.append(s2);
+		std::string tmp = buff.substr(0, i);
+		tmp.append(new_s);
 		pos = tmp.length();
-		tmp.append(ret.substr(i + s1.length(), ret.length()));
-		ret = tmp;
+		tmp.append(buff.substr(i + old_s.length()));
+		buff = tmp;
 	}
-	return (ret);
+	return (buff);
 }
 
 int main(int argc, char **argv){
 	if (argc != 4)
 	{
 		std::cout << "Wrong number of args" << std::endl;
-		return (-1);
+		return (1);
 	}
+	std::string file = argv[1];
+	std::string old_s = argv[2];
+	std::string new_s = argv[3];
 	std::ifstream in;
 	std::ofstream out;
-	in.open(argv[1], std::ifstream::in);
-	out.open(static_cast<std::string>(argv[1]).append(".replace").c_str(), std::ifstream::out);
-	if (in.is_open() && out.is_open())
+	in.open(argv[1]);
+	if (in.is_open())
 	{
-		std::string content = std::string(std::istreambuf_iterator<char>(ifs), std::istreambuf_iterator<char>());
-		ofs << replace_s1(content, static_cast<std::string>(argv[2]), static_cast<std::string>(argv[3]));
+		out.open((file.append(".replace")).c_str());
+		if (out.is_open())
+		{
+			std::string buff = std::string(std::istreambuf_iterator<char>(in), std::istreambuf_iterator<char>());
+			out << replace_string(buff, old_s, new_s);
+		}
+		else
+		{
+			std::cout << "Failed to create/open output file" << std::endl;
+			in.close();
+			return (1);
+		}
 	}
-	else if (in.is_open())
-		std::cout << "Failed to open input file" << std::endl;
-	else if (out.is_open())
-		std::cout << "Failed to open output file" << std::endl;
 	else
-		std::cout << "Failed to open both files" << std::endl;
+	{
+		std::cout << "Failed to open input file" << std::endl;
+		return (1);
+	}
 	out.close();
 	in.close();
+	return (0);
 }
