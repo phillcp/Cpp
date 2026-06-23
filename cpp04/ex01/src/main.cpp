@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:17:40 by fheaton-          #+#    #+#             */
-/*   Updated: 2023/04/20 17:09:18 by fheaton-         ###   ########.fr       */
+/*   Updated: 2026/05/19 14:40:36 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,14 @@ int main()
 	}
 	std::cout << std::endl;
 
-	Dog basic;
-	basic.printIdeas();
-	basic.newIdea("3 e meio");
+	Dog d;
+	d.printIdeas();
+	d.newIdea("3 e meio");
 	{
-		Dog tmp = basic;
+		Dog tmp = d;
 		tmp.printIdeas();
 	}
-	basic.newIdea("4 e meio");
-	basic.printIdeas();
+	d.newIdea("4 e meio");
+	d.printIdeas();
 	return 0;
 }

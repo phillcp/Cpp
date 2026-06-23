@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:56:41 by fheaton-          #+#    #+#             */
-/*   Updated: 2023/02/08 17:07:22 by fheaton-         ###   ########.fr       */
+/*   Updated: 2026/05/19 16:02:42 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class WrongAnimal{
 	protected:
-		std::string type;
+		std::string _type;
 	public:
 		WrongAnimal();
 		~WrongAnimal();

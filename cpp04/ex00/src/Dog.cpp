@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:27:20 by fheaton-          #+#    #+#             */
-/*   Updated: 2023/02/08 17:01:28 by fheaton-         ###   ########.fr       */
+/*   Updated: 2026/05/19 15:01:16 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Dog.hpp>
 
 Dog::Dog(){
-	this->type = "Dog";
+	this->_type = "Dog";
 	std::cout << "Dog constructor called" << std::endl;
 }
 

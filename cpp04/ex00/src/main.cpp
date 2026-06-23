@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:17:40 by fheaton-          #+#    #+#             */
-/*   Updated: 2023/04/20 15:45:47 by fheaton-         ###   ########.fr       */
+/*   Updated: 2026/05/19 14:56:33 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,33 +18,33 @@
 
 int main()
 {
-const Animal* meta = new Animal();
-std::cout << std::endl;
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-std::cout << std::endl;
-const WrongAnimal* nut = new WrongAnimal();
-std::cout << std::endl;
-const WrongAnimal* k = new WrongCat();
-std::cout << std::endl;
-std::cout << j->getType() << " " << std::endl;
-j->makeSound();
-std::cout << i->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
-meta->makeSound();
-std::cout << std::endl;
-std::cout << k->getType() << " " << std::endl;
-k->makeSound();
-nut->makeSound();
-std::cout << std::endl;
-
-delete i;
-delete j;
-std::cout << std::endl;
-delete k;
-std::cout << std::endl;
-delete meta;
-delete nut;
-
-return 0;
+	const Animal* a = new Animal();
+	std::cout << std::endl;
+	const Animal* d = new Dog();
+	const Animal* c = new Cat();
+	std::cout << std::endl;
+	const WrongAnimal* wa = new WrongAnimal();
+	std::cout << std::endl;
+	const WrongAnimal* wc = new WrongCat();
+	std::cout << std::endl;
+	std::cout << d->getType() << std::endl;
+	d->makeSound();
+	std::cout << c->getType() << std::endl;
+	c->makeSound();
+	a->makeSound();
+	std::cout << std::endl;
+	std::cout << wc->getType() << std::endl;
+	wc->makeSound();
+	wa->makeSound();
+	std::cout << std::endl;
+	
+	delete c;
+	delete d;
+	std::cout << std::endl;
+	delete wc;
+	std::cout << std::endl;
+	delete a;
+	delete wa;
+	
+	return 0;
 }

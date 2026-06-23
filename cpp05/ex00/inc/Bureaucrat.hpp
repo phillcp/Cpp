@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fragtrap.hpp                                       :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 13:31:03 by fheaton-          #+#    #+#             */
-/*   Updated: 2023/01/26 14:13:55 by fheaton-         ###   ########.fr       */
+/*   Created: 2026/05/19 16:41:46 by fiheaton          #+#    #+#             */
+/*   Updated: 2026/05/19 16:58:01 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 
 #include <string>
 #include <iostream>
-#include <Claptrap.hpp>
 
-class Fragtrap: public Claptrap{
+class Bureaucrat{
 	private:
-		Fragtrap();
+		const std::string _name;
+		int	_grade;
 	public:
-		Fragtrap(std::string name);
-		~Fragtrap();
-		void highFivesGuys();
-		void attack(const std::string& target);
+		Bureaucrat();
+		Bureaucrat(std::string name, int grade);
+		~Bureaucrat();
+		
+		int Bureaucrat::getGrade();
+		const std::string getName();
 };
 
 #endif

@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/18 19:04:28 by fheaton-          #+#    #+#             */
-/*   Updated: 2026/06/08 16:02:32 by fiheaton         ###   ########.fr       */
+/*   Created: 2023/01/23 16:07:05 by fheaton-          #+#    #+#             */
+/*   Updated: 2026/05/18 19:26:30 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-#define HARL_HPP
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-#include <string>
-#include <iostream>
+#include <ClapTrap.hpp>
 
-class Harl{
-	private:
-		void (Harl::*comp[4])();
-		void debug( void );
-		void info( void );
-		void warning( void );
-		void error( void );
+class ScavTrap: public ClapTrap{
 	public:
-		Harl();
-		~Harl();
-		void complain( std::string level );
+		ScavTrap();
+		ScavTrap(std::string name);
+		~ScavTrap();
+		void guardGate();
+		void attack(const std::string& target);
 };
 
 #endif

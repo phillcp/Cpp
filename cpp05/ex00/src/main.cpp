@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/18 19:04:28 by fheaton-          #+#    #+#             */
-/*   Updated: 2026/06/08 16:02:32 by fiheaton         ###   ########.fr       */
+/*   Created: 2026/05/19 16:58:14 by fiheaton          #+#    #+#             */
+/*   Updated: 2026/05/19 17:01:15 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-#define HARL_HPP
+#include "Bureaucrat.hpp"
 
-#include <string>
-#include <iostream>
+int main()
+{
+	try
+	{
+		Bureaucrat a ("Toze", 151);
+	}
+	catch (std::exception & e)
+	{
+		std::string out = e;
+		std::cout << e << std::endl;
+	}
+	Bureaucrat b ("");
 
-class Harl{
-	private:
-		void (Harl::*comp[4])();
-		void debug( void );
-		void info( void );
-		void warning( void );
-		void error( void );
-	public:
-		Harl();
-		~Harl();
-		void complain( std::string level );
-};
+	a.attack("Tony");
+	b.takeDamage(5);
+	b.beRepaired(5);
 
-#endif
+	std::cout << std::endl;
+
+	return 0;
+}

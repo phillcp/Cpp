@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 14:22:47 by fheaton-          #+#    #+#             */
-/*   Updated: 2023/04/20 16:48:12 by fheaton-         ###   ########.fr       */
+/*   Updated: 2026/05/19 14:47:00 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 class Brain{
 	private:
 		std::string _ideas[100];
-		int _curr_idea;
+		int _ideanbr;
 	public:
 		Brain();
 		Brain(const Brain& other);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fheaton- <fheaton-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:27:20 by fheaton-          #+#    #+#             */
-/*   Updated: 2023/04/20 17:11:58 by fheaton-         ###   ########.fr       */
+/*   Updated: 2026/05/19 17:15:30 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 Dog::Dog(){
 	std::cout << "Dog constructor called" << std::endl;
-	this->type = "Dog";
+	this->_type = "Dog";
 	this->_brain = new Brain;
 }
 
 Dog::Dog(const Dog& other) : Animal(other){
-	this->type = other.type;
+	this->_type = other._type;
 	this->_brain = new Brain(*other._brain);
 	std::cout << "Dog copy constructor called." << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& other){
-	this->type = other.type;
+	this->_type = other._type;
 	delete this->_brain;
 	this->_brain = new Brain(*other._brain);
 	return *this;
@@ -46,7 +46,7 @@ void Dog::newIdea(const std::string& idea){
 
 void Dog::printIdeas() const{
 	std::cout << std::endl;
-	std::cout << this->type << ":\n";
+	std::cout << this->_type << ":" << std::endl;
 	this->_brain->printIdeas();
 	std::cout << std::endl;
 }

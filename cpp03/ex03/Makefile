@@ -1,7 +1,7 @@
 NAME	=	Diamondtrap
 CC		=	@c++
 AR		=	@ar rcs
-CFLAGS	=	-Werror -Wextra -Wall -std=c++98 -MMD -MP -g
+CFLAGS	=	-Werror -Wextra -Wall -Wshadow -std=c++98 -MMD -MP -g
 VLGRIND =	--leak-check=full --show-leak-kinds=all --track-fds=yes --track-origins=yes
 
 BIN_DIR	=	bin/
@@ -11,10 +11,10 @@ OBJ_DIR	=	obj/
 DEP_DIR	=	dep/
 
 SRC 	=	main.cpp \
-			Claptrap.cpp \
-			Scavtrap.cpp \
-			Fragtrap.cpp \
-			Diamondtrap.cpp
+			ClapTrap.cpp \
+			ScavTrap.cpp \
+			FragTrap.cpp \
+			DiamondTrap.cpp
 SRCS	= $(addprefix $(SRC_DIR), $(SRC))
 OBJS	= $(patsubst $(SRC_DIR)%, $(OBJ_DIR)%,$(SRCS:.cpp=.o))
 DEPS	= $(patsubst $(SRC_DIR)%, $(DEP_DIR)%,$(SRCS:.cpp=.d))
