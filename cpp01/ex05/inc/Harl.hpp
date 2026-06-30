@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fiheaton <fiheaton@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fiheaton <fiheaton@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 19:04:28 by fheaton-          #+#    #+#             */
-/*   Updated: 2026/06/23 11:12:48 by fiheaton         ###   ########.fr       */
+/*   Updated: 2026/06/24 13:46:36 by fiheaton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,10 @@
 
 class Harl{
 	private:
-		void (Harl::*comp[4])();
-		void debug( void );
-		void info( void );
-		void warning( void );
-		void error( void );
+		void _debug( void );
+		void _info( void );
+		void _warning( void );
+		void _error( void );
 	public:
 		Harl();
 		~Harl();
