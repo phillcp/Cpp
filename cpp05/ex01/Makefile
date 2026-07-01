@@ -11,7 +11,8 @@ OBJ_DIR	=	obj/
 DEP_DIR	=	dep/
 
 SRC 	=	main.cpp \
-			Bureaucrat.cpp
+			Bureaucrat.cpp \
+			Form.cpp
 			
 SRCS	= $(addprefix $(SRC_DIR), $(SRC))
 OBJS	= $(patsubst $(SRC_DIR)%, $(OBJ_DIR)%,$(SRCS:.cpp=.o))
